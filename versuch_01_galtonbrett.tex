@@ -1,0 +1,83 @@
+\documentclass[english,ngerman]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3.5cm,bmargin=3.5cm,lmargin=3cm,rmargin=3cm}
+\setcounter{secnumdepth}{2}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{esint}
+\usepackage{babel}
+\usepackage{pgfplotstable}
+
+\makeatletter
+\makeatother
+
+\begin{document}
+
+\title{Einführung ins experimentelle Arbeiten}
+\author{Andreas Zuber (03-186-905), Hans Muster (11-111-111)}
+\date{24.2.2012}
+\maketitle
+
+\section{Einleitung}
+
+\subsection{Ziel des Versuches}
+
+\subsection{Literatur}
+\begin{itemize}
+\item Anleitung zum Physikpraktikum, Praktikumsskript FS 2012
+\end{itemize}
+
+\section{Theorie}
+% - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
+\subsection{Aufgabe 1}
+\[
+\binom {n} {n-k}=\frac{n!}{(n-k)!(n-(n-k))!}=\frac{n!}{k!(n-k)!}=\binom{n}{k}
+\]
+
+\subsection{Aufgabe 2}
+?
+
+\subsection{Aufgabe 3}
+\[
+n\binom {n-1} {n-k}=\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}=\frac{n!}{(k-1)!(n-k)!}=k\frac{n!}{k!(n-k)!}=k\binom{n}{k}
+\]
+
+
+\subsection{Theoretische Aufgaben}
+
+\subsection{Fehlerrechnung}
+
+\subsection{Versuchsaufbau}
+% - Skizze
+% - Gerätenummern
+% ...
+
+\section{Messungen}
+% - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
+\pgfplotstabletypeset[
+  col sep=comma,
+  every head row/.style={before row=\hline,after row=\hline\hline},
+  every last row/.style={after row=\hline},
+  every first column/.style={
+    column type/.add={|}{}
+  },
+  every last column/.style={
+    column type/.add={}{|}
+  }
+]{versuch_01_galtonbrett-messung_01.csv}
+
+\section{Diskussion}
+% - Kommentare
+% - Vergleich der Messwerte mit Theorie und Literaturwerten
+% - Hinweis auf möglich Fehlerquellen (besonders systematische Fehler)
+% - Schwierigkeiten bei der Messung
+% ...
+
+\section{Grafische Darstellungen}
+
+\end{document}
