@@ -1,16 +1,10 @@
-\documentclass[english,ngerman]{article}
-\usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
-\usepackage{geometry}
-\geometry{verbose,tmargin=3.5cm,bmargin=3.5cm,lmargin=3cm,rmargin=3cm}
-\setcounter{secnumdepth}{2}
-\usepackage{float}
-\usepackage{textcomp}
-\usepackage{amstext}
+\documentclass[a4paper,10pt]{article}
+\usepackage[latin1]{inputenc}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amstext}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{esint}
-\usepackage{babel}
+%\usepackage{graphicx}
 \usepackage{pgfplotstable}
 
 \makeatletter
@@ -19,43 +13,88 @@
 \begin{document}
 
 \title{Einführung ins experimentelle Arbeiten}
-\author{Andreas Zuber (03-186-905), Hans Muster (11-111-111)}
-\date{24.2.2012}
+\author{Andreas Zuber, Florian Schnider}
+
 \maketitle
 
 \section{Einleitung}
+In diesem Versuch sollen erste Erfahrungen mit statistischen Verteilungen und den Auswertungsverfahren
+gesammelt werden.
 
 \subsection{Ziel des Versuches}
-
-\subsection{Literatur}
-\begin{itemize}
-\item Anleitung zum Physikpraktikum, Praktikumsskript FS 2012
-\end{itemize}
+Wir untersuchen die Verteilung von Kugeln in den 15 Fächern eines Galton-Bretts. Dies ist ein schräggestelltes 
+Brett mit 14 Reihen Stiften, in exakt gleichen Abständen. Wenn wir nun zuoberst eine Kugel loslassen wird diese
+bei jedem Stift entweder nach links oder rechts hinunter rollen. Hat die Kugel eines der Fächer erreicht hat
+sie auf ihrem Weg 14 Stifte passiert also 14 mal entweder links oder rechts runter gerollt.
 
 \section{Theorie}
 % - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
-\subsection{Aufgabe 1}
-\[
-\binom {n} {n-k}=\frac{n!}{(n-k)!(n-(n-k))!}=\frac{n!}{k!(n-k)!}=\binom{n}{k}
-\]
 
-\subsection{Aufgabe 2}
-?
+\subsection{Fachnummern}
+Die Formeln für das Modell sind in den Theoretischen Aufgaben enthalten. Dies sind
+die Formeln welche für die Auswertung der Stichproben dienen.
 
-\subsection{Aufgabe 3}
-\[
-n\binom {n-1} {n-k}=\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}=\frac{n!}{(k-1)!(n-k)!}=k\frac{n!}{k!(n-k)!}=k\binom{n}{k}
-\]
+Durchschnitt oder arithmetischer Mittelwert
+\[ \overline{x}=\frac{1}{N}\sum\limits_{i=1}^Nx_i\]
 
-\subsection{Aufgabe 4}
-\[
-\sum\limits_{x=0}^n
-\]
+Standardabweichung der Einzelmessung oder Fehler der Einzelmessung
+\[ s_x = \frac{1}{\sqrt{N-1}}\sqrt{\sum\limits_{i=1}^N(x_i-\overline{x})^2} \]
 
+Standardabweichung der Durchschnitte oder Fehler des Mittelwerts
+\[ s_{\overline{x}}= \frac{1}{\sqrt{N(N-1)}}\sqrt{\sum\limits_{i=1}^N(x_i-\overline{x})^2} \]
 
 \subsection{Theoretische Aufgaben}
+Dies sind die Lösungen zu den Aufgaben aus dem Skript\cite{Script} für die Vorbereitung.
+
+\subsubsection{Aufgabe 1}
+\[ \binom {n} {n-k}=\frac{n!}{(n-k)!(n-(n-k))!}=\frac{n!}{k!(n-k)!}=\binom{n}{k} \]
+
+\subsubsection{Aufgabe 2}
+Binomischer Lehrsatz (Beweis: Analysis I Skript\cite{Analysis})
+\[ (x+y)^n=\sum\limits_{k=0}^n \binom{n}{k} x^k y^{n-k} \]
+\[ x,y = 1  \Rightarrow  2^n = \sum\limits_{k=0}^n \binom{n}{k} \]
+
+
+\subsubsection{Aufgabe 3}
+\[ n\binom {n-1} {n-k}=\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}=\frac{n!}{(k-1)!(n-k)!}=k\frac{n!}{k!(n-k)!}=k\binom{n}{k} \]
+
+\subsubsection{Aufgabe 4}
+\[ \sum\limits_{x=0}^nP_n(x) = \sum\limits_{x=0}^n \binom{n}{x} p^k q^{n-x} = (p+q)^n\]
+
+\subsubsection{Aufgabe 5}
+\[ p=\frac{2}{3}, q=\frac{1}{3}, x=3, n=4 \]
+\[ P_n(x) = \binom{4}{3}(\frac{2}{3})^3(\frac{1}{3})^1=\underline{\underline{0,395}} \]
+
+\subsubsection{Aufgabe 6}
+\[ p=\frac{1}{2}, q=\frac{1}{2}, x=3, n=8 \]
+\[ 2^8P_n(x) = 2^8\binom{8}{3}(\frac{1}{2})^3(\frac{1}{2})^5=\underline{\underline{56}} \]
+
+\subsubsection{Aufgabe 7}
+\[ F(x)=50P_{14}(x)=50\binom{14}{x}(\frac{1}{2})^x(\frac{1}{2})^{14-x} \]
+\begin{center}
+\begin{tabular}{ll}
+\textbf{Fach} & \textbf{F(x)} \\
+ 0, 14 & $3,1*10^{-3}$ \\
+ 1, 13 & $4,27*10^{-2}$ \\
+ 2, 12 & $2,77*10^{-1}$ \\ 
+ 3, 11 & 1,11 \\
+ 4, 10 & 3,05 \\
+ 5, 9  & 6,2 \\
+ 6, 8  & 9,16 \\
+ 7     & 10.47
+\end{tabular}
+\end{center}
+
+\subsubsection{Aufgabe 8}
+\[ \sigma_{\mu}= \sqrt{\frac{3,5}{N}} \]
+a) 1,87 b) 0,26 c) 0,059
 
 \subsection{Fehlerrechnung}
+
+\subsubsection{Fachnummern}
+Durchschnitt und Standardabweichung der Fachnummern
+
+\[\overline{x}= \]
 
 \subsection{Versuchsaufbau}
 \begin{itemize}
@@ -87,5 +126,13 @@ n\binom {n-1} {n-k}=\frac{(n-1)!}{(k-1)!((n-1)-(k-1))!}=\frac{n!}{(k-1)!(n-k)!}=
 % ...
 
 \section{Grafische Darstellungen}
+
+\begin{thebibliography}{99}
+
+\bibitem{Script} Anleitung zum Physikpraktikum, Praktikumsskript FS 2012, P. Wurz
+
+\bibitem{Analysis} Skript zu Analysis I, C. Tretter
+
+\end{thebibliography}
 
 \end{document}
