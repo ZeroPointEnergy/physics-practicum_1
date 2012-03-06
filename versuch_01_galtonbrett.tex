@@ -27,12 +27,34 @@ Brett mit 14 Reihen Stiften, in exakt gleichen Abständen. Wenn wir nun zuoberst 
 bei jedem Stift entweder nach links oder rechts hinunter rollen. Hat die Kugel eines der Fächer erreicht hat
 sie auf ihrem Weg 14 Stifte passiert also 14 mal entweder links oder rechts runter gerollt.
 
+\subsection{Versuchsaufbau}
+% - Skizze
+% - Gerätenummern
+% ...
+Für den Versuch verwendeten wir das Galton-Brett Nr. 6 und 50 Stahlkugeln für
+die Messungen.
+
+\begin{center}
+ \includegraphics[scale=0.1]{./20120224_002.jpg}
+ % 20120224_002.jpg: 2560x1440 pixel, 300dpi, 21.67x12.19 cm, bb=0 0 614 346
+\end{center}
+
+
 \section{Theorie}
 % - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
 
 \subsection{Fachnummern}
-Die Formeln für das Modell sind in den Theoretischen Aufgaben enthalten. Dies sind
-die Formeln welche für die Auswertung der Stichproben dienen.
+Die Formeln für die zu erwartende durchschnittliche Fachnummer und Standardabweichung sind
+im Skript hergeleitet:
+
+Durchschnittliche Fachnummer:
+\[\mu=pn=7\]
+
+Standardabweichung:
+\[\sigma_\mu=\frac{npq}{\sqrt{1000}}=0,059\]
+
+\subsubsection{Auswertung}
+Dies sind die Formeln welche für die Auswertung der Stichproben dienen.
 
 Durchschnitt oder arithmetischer Mittelwert
 \[ \overline{x}=\frac{1}{N}\sum\limits_{i=1}^Nx_i\]
@@ -42,6 +64,19 @@ Standardabweichung der Einzelmessung oder Fehler der Einzelmessung
 
 Standardabweichung der Durchschnitte oder Fehler des Mittelwerts
 \[ s_{\overline{x}}= \frac{1}{\sqrt{N(N-1)}}\sqrt{\sum\limits_{i=1}^N(x_i-\overline{x})^2} \]
+
+\subsection{Belegung}
+Die zu erwartende Belegung wird in Aufgabe 7 berechnet
+\[ F(x)=50P_{14}(x)=50\binom{14}{x}(\frac{1}{2})^x(\frac{1}{2})^{14-x} \]
+
+Die Standardabweichung ist gegeben durch
+\[\sqrt{F(x)}\]
+
+Diese ist in der Grafik in der Auswertung als Fehlerbalken angezeigt.
+
+\subsubsection{Auswertung}
+Durchschnitt oder arithmetischer Mittelwert
+\[ \overline{x}=\frac{1}{N}\sum\limits_{i=1}^Nx_i\]
 
 \subsection{Theoretische Aufgaben}
 Dies sind die Lösungen zu den Aufgaben aus dem Skript\cite{Script} für die Vorbereitung.
@@ -62,14 +97,21 @@ Binomischer Lehrsatz (Beweis: Analysis I Skript\cite{Analysis})
 \[ \sum\limits_{x=0}^nP_n(x) = \sum\limits_{x=0}^n \binom{n}{x} p^k q^{n-x} = (p+q)^n\]
 
 \subsubsection{Aufgabe 5}
+Das Resultat ist nur fast genau weil wir die Anzahl noch verbleibender Kugeln nicht verringern.
+Wir berechnen also eine unabhängige Wahrscheinlichkeit obwohl dies genau genommen nicht der Fall wäre.
+Der Unterschied ist jedoch so minimal das wir dies vernachlässigen können.
 \[ p=\frac{2}{3}, q=\frac{1}{3}, x=3, n=4 \]
 \[ P_n(x) = \binom{4}{3}(\frac{2}{3})^3(\frac{1}{3})^1=\underline{\underline{0,395}} \]
 
 \subsubsection{Aufgabe 6}
+Anzahl Binärdarstellungen mit 3 Einsen und 5 Nullen.
 \[ p=\frac{1}{2}, q=\frac{1}{2}, x=3, n=8 \]
 \[ 2^8P_n(x) = 2^8\binom{8}{3}(\frac{1}{2})^3(\frac{1}{2})^5=\underline{\underline{56}} \]
 
 \subsubsection{Aufgabe 7}
+Dies sind die Erwartungswerte für Anzahl Kugeln in den Fächern. Die Resultate
+Werden direkt in der Auswertung benutzt um die Messwerte mit den Theoretischen
+Werten zu vergleichen.
 \[ F(x)=50P_{14}(x)=50\binom{14}{x}(\frac{1}{2})^x(\frac{1}{2})^{14-x} \]
 \begin{center}
 \begin{tabular}{ll}
@@ -91,21 +133,51 @@ a) 1,87 b) 0,26 c) 0,059
 
 \subsection{Fehlerrechnung}
 
+\subsubsection{Belegungen}
+Die Messung besteht aus 20 Einzelmessungen zu je 50 Kugeln. Für die Berechnung
+der durchschnittlichen Fachnummer und der Standardabweichung benötigen wir
+zuerst die Summe der Kugeln die in den einzelnen Fächer gelandet sind.
+
+\begin{center}
+\begin{tabular}{llllllllllllllll}
+\textbf{Fach} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 \\
+\textbf{Kugeln} & 0 & 0 & 5 & 18 & 81 & 132 & 213 & 183 & 158 & 118 & 65 & 21 & 4 & 2 & 0
+\end{tabular}
+\end{center}
+
+Um die Durchschnittliche Fachbelegung zu erhalten teilen wir die Summen durch die Anzahl
+Messungen (20)
+
+\begin{center}
+\begin{tabular}{llllllllllllllll}
+\textbf{Fach} & 01 & 02 & 03 & 04 & 05 & 06 & 07 & 08 & 09 & 10 & 11 & 12 & 13 & 14 & 15 \\
+\textbf{Kugeln} & 0 & 0 & 0.25 & 0.9 & 4.05 & 6.6 & 10.65 & 9.15 & 7.9 & 5.9 & 3.25 & 1.05 & 0.2 & 0.1 & 0
+\end{tabular}
+\end{center}
+
 \subsubsection{Fachnummern}
-Durchschnitt und Standardabweichung der Fachnummern
 
-\[\overline{x}= \]
-
-\subsection{Versuchsaufbau}
 \begin{itemize}
-\item Galton-Brett Nr. 6
+ \item $a_n$ : Anzahl Kugeln in Fach n
+ \item n : Fachnummer
 \end{itemize}
-% - Skizze
-% - Gerätenummern
-% ...
+
+Die durchschnittliche Fachnummer beträgt also
+\[ \overline{x}=\frac{1}{1000}\sum\limits_{n=1}^{15}n*a_n=\underline{7.888}\]
+
+Die Standardabweichung der Einzelmessung beträgt
+\[ s_x = \frac{1}{\sqrt{1000 - 1}}\sqrt{\sum\limits_{n=1}^{15}a_n(n-\overline{x})^2}=\underline{1.897}\]
+
+Die Standardabweichung des Durchschnitts beträgt
+\[ s_{\overline{x}}= \frac{1}{\sqrt{1000(1000-1)}}\sqrt{\sum\limits_{n=1}^{15}a_n(n-\overline{x})^2}=\underline{0.06}\]
+
+Durchschnitt und Standardabweichung des Durchschnitts können zusammen angegeben werden
+\[ \overline{x}\pm s_{\overline{x}}=\underline{\underline{7.888\pm0.06}}\]
 
 \section{Messungen}
 % - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
+F0-F14: Fächer 0-14 mit Anzahl Kugeln
+\begin{center}
 \pgfplotstabletypeset[
   col sep=comma,
   every head row/.style={before row=\hline,after row=\hline\hline},
@@ -117,6 +189,7 @@ Durchschnitt und Standardabweichung der Fachnummern
     column type/.add={}{|}
   }
 ]{versuch_01_galtonbrett-messung_01.csv}
+\end{center}
 
 \section{Diskussion}
 % - Kommentare
@@ -124,8 +197,43 @@ Durchschnitt und Standardabweichung der Fachnummern
 % - Hinweis auf möglich Fehlerquellen (besonders systematische Fehler)
 % - Schwierigkeiten bei der Messung
 % ...
+\subsection{Fachnummern}
+Die durchschnittliche Fachnummer liegt sehr viel höher als erwartet während die
+Standardabweichung ziemlich genau dem vorausberechneten Wert entspricht. Die
+hohe Abweichung bei der Fachnummer könnte darauf hindeuten dass das Brett nicht
+schön Horizontal ausgerichtet war und somit das p,q Verhältnis nicht 50:50 entsprach.
 
-\section{Grafische Darstellungen}
+\begin{itemize}
+ \item Theorie: $7.0\pm0,059$
+ \item Messung: $7.888\pm0.06$
+\end{itemize}
+
+Weitere Fehler könnten von der Konstruktion des Brettes selbst stammen. Schon kleinste
+Verbiegungen der Nägel durch die stetige Kollisionen mit den Kugeln könnten deren Ausrichtung
+verändern.
+
+\subsection{Belegung}
+
+\begin{center}
+ \includegraphics[scale=0.5]{./grafik.png}
+ % grafik.png: 982x491 pixel, 84dpi, 29.69x14.85 cm, bb=0 0 842 421
+\end{center}
+
+Aus der Grafik ist zu sehen das keines der Fächer Signifikant unter- oder
+überbesetzt ist (Siehe Fehlerbalken). Unser Galton-Brett war also ziemlich genau.
+
+Eine Möglichkeit das Galton-Brett zu verbessern wäre sicherlich eine bessere
+Separierung der Kugeln so das diese sich nicht gegenseitig beeinflussen.
+Eine weitere Möglichkeit wäre es das Brett genauer horizontal auszurichten so das
+die Wahrscheinlichkeit das die Kugel links oder rechts herunterfällt gleich gross ist.
+
+\subsection{Schwierigkeiten bei der Messung}
+Anfänglich hatten wir Probleme mit dem verzählen so das die ersten zwei Messungen
+nicht genau 50 Kugeln enthielten. Wir mussten also nach jeder Messung zusammenrechnen
+ob wir die richtige Anzahl gemessen hatten. Die ersten zwei Messungen haben wir wiederholt.
+
+Ein weiterer Punkt war das wir die Kugeln nicht zu dicht hintereinander in die Öffnung
+lassen konnten da sich diese sonst im Brett gegenseitig beeinflusst hätten.
 
 \begin{thebibliography}{99}
 
