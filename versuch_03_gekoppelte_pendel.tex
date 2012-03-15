@@ -25,7 +25,7 @@ aus Zwei Pendel die mittels einer Feder verbunden sind.
 Zeil des Versuchs ist es die beiden Pendel in verschiedenen Konfigurationen zu vermessen und die Messresultate
 mit den Werten aus der Theorie zu vergleichen.
 
-\subsection{Versuchsaufbau}
+\subsection{Versuchsaufbau}\label{sec:versuchsaufbau}
 % - Skizze
 % - Gerätenummern
 % ...
@@ -45,8 +45,8 @@ mit den Werten aus der Theorie zu vergleichen.
 
 Werte zum Versuchsaufbau:
 \begin{itemize}
- \item $m = 214,15g$ : Masse des Gewichts
- \item $m' = 21,37g$ : Masse des Pendelschafts
+ \item $m_g = 214,15g$ : Masse des Gewichts
+ \item $m_s = 21,37g$ : Masse des Pendelschafts
  \item $m_r = 2,00g$ : Masse der Reguliermutter
  \item $d = 264mm$ : Distanz Achsenmittelpunkt bis Gewichtsmittelpunkt 
 \end{itemize}
@@ -55,6 +55,7 @@ Werte zum Versuchsaufbau:
  \centering
  \includegraphics[scale=0.3]{./versuch_03_gekoppelte_pendel_pendel.jpeg}
  \caption{Dimensionen des Pendels}
+ \label{pendel}
 \end{figure}
 
 \section{Theorie}
@@ -121,8 +122,8 @@ das erste Pendel in eine Position $\phi_1$ ausgelenkt. Beim zweiten Pendel stell
 nun die Auslenkung $\phi_2$ ein.
 
 \begin{center}
-\[D_g=gl(m+\frac{m'}{2})\]
-\[D_f=gl(m+\frac{m'}{2})\frac{\phi_1}{\phi_2-\phi_1}\]
+\[D_g=gl(m_g+\frac{m_s}{2})\]
+\[D_f=gl(m_g+\frac{m_s}{2})\frac{\phi_1}{\phi_2-\phi_1}\]
 \end{center}
 
 \subsection{Kopplungsgrad}
@@ -140,15 +141,26 @@ Komponenten zusammen.
 \begin{itemize}
  \item $J_p$ : Trägheitsmoment eines Pendels
  \item $J_g$ : Trägheitsmoment des Gewichts
- \item $J_S$ : Trägheitsmoment des Schafts
- \item $J_R$ : Trägheitsmoment der Reguliermutter
+ \item $J_s$ : Trägheitsmoment des Schafts
+ \item $J_r$ : Trägheitsmoment der Reguliermutter
 \end{itemize}
-
 
 \begin{center}
 \[J_p=J_g+J_S+J_R\]
-\[J_g=\frac{m}{12}(3(R^2+r^2)+h^2+12d^2)\]
+\[J_g=\frac{m_g}{12}(3(R^2+r^2)+h^2+12d^2)\]
+\[J_s=\frac{m_s}{12}(3r^2+4l^2)\]
+\[J_r=\frac{m_r}{12}(3(R_r^2+r_r^2)+h_r^2+12d_r^2)\]
 \end{center}
+
+Die Werte für das Gewicht und den Schaft sind in Abschnitt \ref{sec:versuchsaufbau} und Abbildung~\ref{pendel}
+angegeben. Die Werte für die Mutter sind im Script\cite{Script} angenähert gegeben.
+
+\begin{itemize}
+ \item $R_r = 4,75mm$ Aussenradius
+ \item $r_r = 2,5mm$ Innnenradius
+ \item $h_r = 5mm$ Dicke der Mutter
+ \item $d_r = d + \frac{1}{2}(h-h_r)$ Distanz Achsenmittelpunkt bis Muttermittelpunkt
+\end{itemize}
 
 
 \subsection{Fehlerrechnung}
