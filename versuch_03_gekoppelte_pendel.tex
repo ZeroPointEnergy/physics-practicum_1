@@ -22,7 +22,7 @@ In diesem Versuch untersuchen wir ein gekoppeltes Pendel. Die Apparatur besteht
 aus Zwei Pendel die mittels einer Feder verbunden sind.
 
 \subsection{Ziel des Versuches}
-Zeil des Versuchs ist es die beiden Pendel in verschiedenen Konfigurationen zu vermessen und die Messresultate
+Ziel des Versuchs ist es die beiden Pendel in verschiedenen Konfigurationen zu vermessen und die Messresultate
 mit den Werten aus der Theorie zu vergleichen.
 
 \subsection{Versuchsaufbau}\label{sec:versuchsaufbau}
@@ -58,7 +58,7 @@ Werte zum Versuchsaufbau:
  \label{pendel}
 \end{figure}
 
-\section{Theorie}
+\section{Theorie}\label{theorie}
 % - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
 Die Schwingungsdauer für die verschiedenen Fälle die wir im Experiment messen können 
 theoretisch berechnet werden. Die Herleitungen der Formeln befinden sich im Script\cite{Script}
@@ -93,21 +93,21 @@ $\tau_\Omega$ bezeichnet.
 
 \subsection{Fall 3: $\varphi_1=\phi, \varphi_2=0$}
 In diesm Fall wird nur das erste Pendel ausgelenkt. Das zweite ruht in $\varphi_2=0$.
-Die Schwingun eines Pendels in dieser Konfiguration wird mit $\tau$ bezeichnet.
+Die Schwingung eines Pendels in dieser Konfiguration wird mit $\tau$ bezeichnet.
 
-Wärend nun das erste Pendel schwingt wird über die Feder die Schwingungsenergie langsam
+Während nun das erste Pendel schwingt wird über die Feder die Schwingungsenergie langsam
 auf das zweite Pendel übertragen. Die Amplitude des ersten Pendels wird im laufe der Zeit
 kleiner bis es ganz zum Stillstand kommt und sämtliche Schwingungsenergie im zweiten Pendel
 steckt. Nun kehrt sich der Prozess gerade um und die Schwingungsenergie fliesst wieder zurück
-zum ersten Pendel. Diese Schwingung des Gesammtsystems nennt man Schwebung und ihre Schwingdauer
-ist in diesem Fall von interesse und wird mit $T_s$ bezeichnet.
+zum ersten Pendel. Diese Schwingung des Gesamtsystems nennt man Schwebung und ihre Schwingdauer
+ist in diesem Fall von Interesse und wird mit $T_s$ bezeichnet.
 
 \begin{center}
 \[\tau=\frac{4\pi}{\Omega+\omega}\]
 \[T_s=\frac{2\pi}{\Omega-\omega}\]
 \end{center}
 
-\subsection{Direktions- und Koppungsmoment}
+\subsection{Direktions- und Koppungsmoment}\label{kopplungsmoment}
 Das Direktions- und Kopplungsmoment kann berechnet werden wenn das Trägheitsmoment
 bekannt ist und die jeweils relevante Schwingungsdauer.
 
@@ -116,7 +116,7 @@ bekannt ist und die jeweils relevante Schwingungsdauer.
 \[D_f=2\pi^2J(\frac{1}{\tau_\Omega^2}-\frac{1}{\tau_\omega^2})\]
 \end{center}
 
-\subsubsection{Dynamische bestimmung}
+\subsubsection{Statische Bestimmung}
 Das Direktions- und Kopplungsmoment kann auch statisch bestimmt werden. Dabei wird
 das erste Pendel in eine Position $\phi_1$ ausgelenkt. Beim zweiten Pendel stellt sich
 nun die Auslenkung $\phi_2$ ein.
@@ -126,7 +126,7 @@ nun die Auslenkung $\phi_2$ ein.
 \[D_f=gl(m_g+\frac{m_s}{2})\frac{\phi_1}{\phi_2-\phi_1}\]
 \end{center}
 
-\subsection{Kopplungsgrad}
+\subsection{Kopplungsgrad}\label{kopplungsgrad}
 Der Kopplungsgrad hängt von $D_f$ und $D_g$ ab. Er kann also sowohl aus den Schwingungszeiten
 wie auch statisch aus den Auslenkungen bestimmt werden.
 
@@ -134,7 +134,7 @@ wie auch statisch aus den Auslenkungen bestimmt werden.
 \[k=\frac{\tau_\omega^2-\tau_\Omega^2}{\tau_\omega^2+\tau_\Omega^2}=\frac{\phi_1}{\phi_2}\]
 \end{center}
 
-\subsection{Trägheitsmoment}
+\subsection{Trägheitsmoment}\label{traegheitsmom}
 Das Trägheitsmoment eines Pendels setzt sich aus den einzelnen Trägheitsmomenten seiner 
 Komponenten zusammen.
 
@@ -157,16 +157,276 @@ angegeben. Die Werte für die Mutter sind im Script\cite{Script} angenähert gegeb
 
 \begin{itemize}
  \item $R_r = 4,75mm$ Aussenradius
- \item $r_r = 2,5mm$ Innnenradius
+ \item $r_r = 2,5mm$ Innenradius
  \item $h_r = 5mm$ Dicke der Mutter
  \item $d_r = d + \frac{1}{2}(h-h_r)$ Distanz Achsenmittelpunkt bis Muttermittelpunkt
 \end{itemize}
 
-
 \subsection{Fehlerrechnung}
+Die Formeln für die Fehlerrechnung sind hier nicht mehr explizit aufgelistet. Allerdings wird
+an den entsprechenden Stellen in den Aufgaben auf das Skript referenziert wo diese zu finden sind.
 
-\section{Messungen}
+\section{Praktische Aufgaben}
 % - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
+
+\subsection{Aufgabe 1}
+Bei der ersten Messung wurde die Schwingungsdauer eines einzelnen Pendels gemessen. Dazu wurde die
+Feder entfernt und die Zeit von je 10 Perioden gemessen. Daraus wurde die Periodendauer $T_0$ berechnet.
+
+Für die Berechnung des Mittelwerts sowie der Standardabweichung wurden die Formeln im Script\cite[S. 26]{Script}
+verwendet. 
+
+\begin{itemize}
+ \item $T_0$ : Periodendauer
+ \item $\overline{T_0}$ : Mittelwert\cite[S.26 (2.31)]{Script}
+ \item $s_{T_0}$ : Standardabweichung der Einzelmessung\cite[S.26 (2.32)]{Script}
+ \item $s_{\overline{T_0}}$ : Standardabweichung der Durchschnitte\cite[S.26 (2.33)]{Script}
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+& 01 & 02 & 03 & 04 & $\overline{T_0}$ & $s_{T_0}$ & $s_{\overline{T_0}}$ \\
+\hline
+$T_0$ [s] & 1,05 & 1,10 & 1,00 & 1,00 & 1,0375 & 0,041 & 0,021\\
+\hline
+\end{tabular}
+\end{center}
+
+\[\overline{T_0}\pm s_{\overline{T_0}}=\underline{\underline{1,0375\pm0,021}}\]
+
+Das Resultat können wir nun direkt mit dem Theoretischen Wert vergleichen
+
+\[T_0=2\pi\sqrt{\frac{d}{g}}=2\pi\sqrt{\frac{264mm}{9,81ms^{-2}}}=1,03s\]
+
+Der Theoretische Wert liegt also noch innerhalb der Standardabweichung des Mittelwerts
+
+\subsection{Aufgabe 2}
+In der zweiten Messung wurden die Schwingungszeiten der drei verschiedenen Fälle welche in
+Abschnitt \ref{theorie} aufgelistet sind Berechnet. Für die Fehlerrechnung wurden die selben
+Formeln wie in Aufgabe 1 verwendet.
+
+Bei der Messung wurden 3 mal je 50 Perioden für zwei verschiedene Kopplungsgrade (Höhe der Feder)
+gemessen. Für die Schwebung $T_s$ wurden jeweils 5 Perioden gemessen.
+
+\begin{itemize}
+ \item $\tau_\omega$ : Schwingungsdauer im Fall 1 $\varphi_1=\phi, \varphi_2=\phi$
+ \item $\tau_\Omega$ : Schwingungsdauer im Fall 2 $\varphi_1=\phi, \varphi_2=-\phi$
+ \item $\tau$ : Schwingungsdauer im Fall 3 $\varphi_1=\phi, \varphi_2=0$
+ \item $b$ : Abstand der Feder vom Achsenmittelpunkt
+\end{itemize}
+
+\subsubsection{Kopplungsgrad 1: b = 132 mm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\tau_\omega$ [s] & $\tau_\Omega$ [s] & $\tau$ [s] & $T_s$ [s] \\
+\hline
+ 1,02 & 0,98 & 1,06 & 22,6 \\
+ 1,02 & 0,98 & 1,02 & 22,2 \\
+ 1,02 & 0,98 & 1,00 & 22,8 \\
+\hline
+$\overline{\tau_{\omega_1}}$ [s] & $\overline{\tau_{\Omega_1}}$ [s] & $\overline{\tau_1}$ [s] & $\overline{T_{s_1}}$ [s] \\
+\hline
+ 1,02 & 0,98 & 1,03 & 22,5 \\
+\hline
+$s_{\tau_{\omega_1}}$ [s] & $s_{\tau_{\Omega_1}}$ [s] & $s_{\tau_1}$ [s] & $s_{T_{s_1}}$ [s] \\
+\hline
+ 0 & 0 & 0,025 & 0,25 \\
+\hline
+$s_{\overline{\tau_{\omega_1}}}$ [s] & $s_{\overline{\tau_{\Omega_1}}}$ [s] & $s_{\overline{\tau_1}}$ [s] & $s_{\overline{T_{s_1}}}$ [s] \\
+\hline
+ 0 & 0 & 0,014 & 0,14 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Kopplungsgrad 2: b = 200 mm}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\tau_\omega$ [s] & $\tau_\Omega$ [s] & $\tau$ [s] & $T_s$ [s]  \\
+\hline
+ 1,02 & 0,94 & 1,02 & 10 \\
+ 1,02 & 0,92 & 1,00 & 10 \\
+ 1,04 & 0,92 & 0,96 & 10 \\
+\hline
+$\overline{\tau_{\omega_2}}$ [s] & $\overline{\tau_{\Omega_2}}$ [s] & $\overline{\tau_2}$ [s] & $\overline{T_{s_2}}$ [s] \\
+\hline
+ 1,03 & 0,93 & 0,99 & 10 \\
+\hline
+$s_{\tau_{\omega_2}}$ [s] & $s_{\tau_{\Omega_2}}$ [s] & $s_{\tau_2}$ [s] & $s_{T_{s_2}}$ [s] \\
+\hline
+ 0,009 & 0,009 & 0,025 & 0 \\
+\hline
+$s_{\overline{\tau_{\omega_2}}}$ [s] & $s_{\overline{\tau_{\Omega_2}}}$ [s] & $s_{\overline{\tau_2}}$ [s] & $s_{\overline{T_{s_2}}}$ [s] \\
+\hline
+0,005 & 0,005 & 0,014 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Fehlerrechnung}
+Wie berechnen nun $\tau$ mittels den gemessenen Mittelwerten von $\tau_\Omega$ und $\tau_\omega$ und
+dessen Fehler mit Hilfe des Fehlerfortpflanzungsgesetz nach Gauss\cite[S.27 (2.35)]{Script}.
+
+\[\tau_1=\frac{2\overline{\tau_{\Omega_1}}\overline{\tau_{\omega_1}}}{\overline{\tau_{\Omega_1}}+\overline{\tau_{\omega_1}}}=0.9996s\]
+\[\tau_2=\frac{2\overline{\tau_{\Omega_2}}\overline{\tau_{\omega_2}}}{\overline{\tau_{\Omega_2}}+\overline{\tau_{\omega_2}}}=0.9774s\]
+
+Allgemein:
+
+\[s_\tau=\sqrt{(\frac{\partial \tau}{\partial \tau_\omega})^2 s_{\overline{\tau_{\omega}}}^2 + (\frac{\partial \tau}{\partial \tau_\Omega})^2 s_{\overline{\tau_{\Omega}}}^2}\]
+
+\[\frac{\partial \tau}{\partial \tau_\omega}=\frac{2\tau_{\Omega}^2}{(\tau_{\Omega}+\tau_{\omega})^2}\]
+\[\frac{\partial \tau}{\partial \tau_\Omega}=\frac{2\tau_{\omega}^2}{(\tau_{\Omega}+\tau_{\omega})^2}\]
+
+Berechnung:
+
+\[s_{\tau_1}=0s\]
+\[s_{\tau_2}=0,0035s\]
+
+Analog die Berechnung für $T_s$
+
+\[T_{s_1}=\frac{\overline{\tau_{\Omega_1}}\overline{\tau_{\omega_1}}}{\overline{\tau_{\omega_1}}-\overline{\tau_{\Omega_1}}}=24,99s\]
+\[T_{s_2}=\frac{\overline{\tau_{\Omega_2}}\overline{\tau_{\omega_2}}}{\overline{\tau_{\omega_2}}-\overline{\tau_{\Omega_2}}}=9,579s\]
+
+Allgemein:
+
+\[s_{T_s}=\sqrt{(\frac{\partial T_s}{\partial \tau_\omega})^2 s_{\overline{\tau_{\omega}}}^2 + (\frac{\partial T_s}{\partial \tau_\Omega})^2 s_{\overline{\tau_{\Omega}}}^2}\]
+
+\[\frac{\partial T_s}{\partial \tau_\omega}=\frac{\tau_{\Omega}^2}{(\tau_{\omega}-\tau_{\Omega})^2}\]
+\[\frac{\partial T_s}{\partial \tau_\Omega}=-\frac{\tau_{\omega}^2}{(\tau_{\Omega}-\tau_{\Omega})^2}\]
+
+Berechnung:
+
+\[s_{T_{s_1}}=0\]
+\[s_{T_{s_2}}=6,14\]
+
+\subsubsection{Vergleich}
+Wir können nun die gemessenen und die berechneten Werte direkt vergleichen.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+& $\tau_1$ [s] & $T_{s_1}$ [s]  \\
+\hline
+Messwerte mit Stabw. & $1,03\pm 0,014s$ & $22,5\pm 0,14s$ \\
+\hline
+Berechnung mit Fehler & $0.9996\pm 0s$ & $24,99\pm 0s$\\
+\hline
+& $\tau_2$ [s] & $T_{s_2}$ [s]  \\
+\hline
+Messwerte mit Stabw. & $0,99\pm 0,014s$ & $10\pm 0s$ \\
+\hline
+Berechnung mit Fehler & $0.9774\pm 0,0035s$ & $9,579\pm 6,14s$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Aufgabe 3}
+In dieser Aufgabe berechnen wir das Trägheitsmoment des Pendels, das Kopplungsmoment sowie den
+Kopplungsgrad statisch und dynamisch.
+
+\subsubsection{Trägheitsmoment}
+Das Trägheitsmoment setzt sich aus den Trägheitsmomenten der einzelnen Komponenten zusammen. Die verwendeten
+Werte sind im Abschnitt \ref{sec:versuchsaufbau} angegeben die Formeln befinden sich im Abschnitt \ref{traegheitsmom}
+
+\begin{itemize}
+ \item Trägheitsmoment der Reguliermutter $J_r=0,00016kgm^2$
+ \item Trägheitsmoment der Schafts $J_s=0,0064$
+ \item Trägheitsmoment der Gewichts $J_g=0,015kgm^2$
+\end{itemize}
+
+\[\Longrightarrow J_p=0,0215kgm^2\]
+
+\subsubsection{Messung der Auslenkung}
+Um das Kopplungsmoment und den Kopplungsgrad statisch zu bestimmen wurden zwei Messungen
+durchgeführt bei der das rechte Pendel ausgelenkt und die Auslenkung des linken auf
+Grund der Feder gemessen wurde.
+
+\begin{itemize}
+ \item $\tilde{\phi_1}$ : Abstand zwischen linker Strebe und linkem Pendel
+ \item $\tilde{\phi_2}$ : Abstand zwischen rechter Strebe und rechtem Pendel
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ b [mm] & $\tilde{\phi_1}$ [mm] & $\tilde{\phi_2}$ [mm] \\
+\hline
+132 & 114 & 8 \\
+\hline
+200 & 122 & 8 \\
+\hline
+\end{tabular}
+\end{center}
+
+\[\phi_1=arcsin(\frac{\tilde{\phi_1}-105}{300})\]
+\[\phi_2=arcsin(\frac{105-\tilde{\phi_2}}{300})\]
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+ b [mm] & $\phi_1$ [\textdegree] & $\phi_2$ [\textdegree] \\
+\hline
+132 & 1,72 & 18,86 \\
+\hline
+200 & 3,25 & 18,86 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Kopplungsmoment}
+Die Formeln zur Berechnung des Kopplungsmoments sind in Abschnitt \ref{kopplungsmoment}. Da wir zwei
+Messreihen mit unterschiedlichem Kopplungsgrad durchgeführt haben erhalten wir auch zwei unterschiedliche
+Kopplungsmomente.
+
+Dynamisch:
+
+\[D_{f_1}=0,034kgm^2s^{-2}\]
+\[D_{f_2}=0,091kgm^2s^{-2}\]
+
+\[s_{D_{f}}=\sqrt{(\frac{\partial D_{f}}{\partial\tau_{\omega}})^{2}s_{\tau_{\omega}}^{2}+(\frac{\partial D_{f}}{\partial\tau_{\Omega}})^{2}s_{\tau_{\Omega}}^{2}}\]
+\[\frac{\partial D_{f}}{\partial\tau_{\omega}}=\frac{4\pi^{2}J}{\tau_{\omega}^{3}}\]
+\[\frac{\partial D_{f}}{\partial\tau_{\Omega}}=\frac{4\pi^{2}J}{\tau_{\Omega}^{3}}\]
+
+\[s_{D_{f_1}}=0kgm^2s^{-2}\]
+\[s_{D_{f_2}}=0.0066kgm^2s^{-2}\]
+
+\[D_{f_1}=0,034\pm 0kgm^2s^{-2}\]
+\[D_{f_2}=0,091\pm 0.0066kgm^2s^{-2}\]
+
+Statisch:
+
+\[D_{f_1}=0,066kgm^2s^{-2}\]
+\[D_{f_2}=0,14kgm^2s^{-2}\]
+
+
+\subsection{Kopplungsgrad}
+Mit den Formeln im Abschnitt \ref{kopplungsgrad} können wir nun noch den Kopplungsgrad
+sowohl dynamisch wie auch statisch berechnen.
+
+Dynamisch:
+
+\[\kappa_1=0,04\]
+\[\kappa_2=0.102\]
+
+\[s_{\kappa}=\sqrt{(\frac{\partial \kappa}{\partial\tau_{\omega}})^{2}s_{\tau_{\omega}}^{2}+(\frac{\partial \kappa}{\partial\tau_{\Omega}})^{2}s_{\tau_{\Omega}}^{2}}\]
+\[\frac{\partial \kappa}{\partial\tau_{\omega}}=\frac{4\tau_{\omega}\tau_{\Omega}^{2}}{^{(\tau_{\omega}^{2}+\tau_{\Omega}^{2})^{2}}}\]
+\[\frac{\partial \kappa}{\partial\tau_{\Omega}}=-\frac{4\tau_{\omega}^{2}\tau_{\Omega}}{^{(\tau_{\omega}^{2}+\tau_{\Omega}^{2})^{2}}}\]
+
+\[s_{\kappa_1}=0\]
+\[s_{\kappa_2}=0,00717\]
+
+\[\kappa_1=0,04\pm 0\]
+\[\kappa_2=0.102\pm 0,00717\]
+
+Statisch:
+
+\[\kappa_1=0.091\]
+\[\kappa_2=0.172\]
 
 \section{Diskussion}
 % - Kommentare
@@ -174,13 +434,22 @@ angegeben. Die Werte für die Mutter sind im Script\cite{Script} angenähert gegeb
 % - Hinweis auf möglich Fehlerquellen (besonders systematische Fehler)
 % - Schwierigkeiten bei der Messung
 % ...
+Was bei Betrachtung der Messresultate sofort auffällt, vor allem in der ersten Serie ist das die
+Messungen alle die selben Werte enthalten. Dies deutet darauf hin das die Messung der Perioden mittels
+der Uhr zu ungenau war um überhaupt den Bereich der Schwankungen zu erfassen. So wurde dann leider auch
+die Standardabweichung in dieser ersten Messreihe jeweils 0. Eine mögliche Verbesserungen der Messung wären
+noch mehr Perioden zu messen oder eine Digitale Stoppuhr mit Zehntelsekunden zu verwenden.
 
+Ein weiterer Punkt der negativ auffällt ist die statische Berechnung des Kopplungsmoments und Kopplungsgrades.
+Die Resultate weichen beträchtlich von der Berechnung im dynamischen Fall ab. Als Ursache vermuten wir einen Fehler
+bei der Messung der Auslenkungen.
+
+Während der Messungen haben wir aus versehen die Feder beschädigt, die könnte ein weiterer Faktor für Fehler in den
+Messwerten sein.
 
 \begin{thebibliography}{99}
 
 \bibitem{Script} Anleitung zum Physikpraktikum, Praktikumsskript FS 2012, P. Wurz
-
-\bibitem{Analysis} Skript zu Analysis I, C. Tretter
 
 \end{thebibliography}
 
