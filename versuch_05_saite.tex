@@ -1,0 +1,74 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[latin1]{inputenc}
+%\usepackage{color}
+%\usepackage{colortbl}
+%\usepackage{amstext}
+\usepackage{amsmath}
+%\usepackage{graphicx}
+\usepackage{pgfplotstable}
+
+\makeatletter
+\makeatother
+
+\begin{document}
+
+\title{Transversalschwingung einer gespannten Saite}
+\author{Andreas Zuber, Florian Schnider}
+
+\maketitle
+
+\section{Einleitung}
+
+\subsection{Ziel des Versuches}
+
+\subsection{Versuchsaufbau}\label{sec:versuchsaufbau}
+% - Skizze
+% - Gerätenummern
+% ...
+
+\section{Theorie}\label{sec:theorie}
+% - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
+
+\section{Fehlerrechnung}
+
+\section{Praktische Aufgaben}
+% - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
+
+\section{Messung}
+
+\begin{itemize}
+ \item K [N] : Zugkraft
+ \item f [Hz] : Frequenz
+ \item n [-] : Anzahl Knoten
+\end{itemize}
+
+
+\begin{center}
+\pgfplotstabletypeset[
+  col sep=comma,
+  every head row/.style={before row=\hline,after row=\hline\hline},
+  every last row/.style={after row=\hline},
+  every first column/.style={
+    column type/.add={|}{}
+  },
+  every last column/.style={
+    column type/.add={}{|}
+  }
+]{versuch_05_saite_messung_01.csv}
+\end{center}
+
+
+\section{Diskussion}
+% - Kommentare
+% - Vergleich der Messwerte mit Theorie und Literaturwerten
+% - Hinweis auf möglich Fehlerquellen (besonders systematische Fehler)
+% - Schwierigkeiten bei der Messung
+% ...
+
+\begin{thebibliography}{99}
+
+\bibitem{Script} Anleitung zum Physikpraktikum, Praktikumsskript FS 2012, P. Wurz
+
+\end{thebibliography}
+
+\end{document}
