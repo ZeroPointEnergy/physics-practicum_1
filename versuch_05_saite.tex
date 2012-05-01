@@ -20,43 +20,197 @@
 \section{Einleitung}
 
 \subsection{Ziel des Versuches}
+Ziel des Versuches ist es die Stationären Lösungen der Wellengleichung experimentell zu
+bestätigen und den Zusammenhang von Tönen und Oberschwingungen zu verstehen. 
 
 \subsection{Versuchsaufbau}\label{sec:versuchsaufbau}
 % - Skizze
 % - Gerätenummern
 % ...
+\begin{center}
+ \includegraphics[scale=0.3]{./versuch_05_saite_aufbau.jpeg}
+ % versuch_05_saite_aufbau.jpeg: 1091x819 pixel, 84dpi, 32.99x24.76 cm, bb=0 0 935 702
+\end{center}
+
+\begin{enumerate}
+ \item Vorrichtung zum einstellen der Länge der Saite
+ \item Spannvorrichtung
+ \item Federwaage
+ \item Elektromagnet
+ \item Frequenzgenerator
+ \item Verstärker
+ \item Multimeter
+\end{enumerate}
+
+Wir haben gleich zu beginn mittels der Vorrichtung (1) die Länge der Saite auf 1m eingestellt.
+Diese blieb für alle Messungen die selbe. Die Verkabelung ist im folgenden Schema illustriert. 
+
+\begin{center}
+ \includegraphics[scale=0.6]{./versuch_05_saite_schaltung.jpeg}
+ % versuch_05_saite_schaltung.jpeg: 515x131 pixel, 72dpi, 18.17x4.62 cm, bb=0 0 515 131
+\end{center}
+
+Der Frequenzgenerator und der Verstärker haben jeweils noch eine 230V Speisung und ein internes Schaltnetzteil
+welches hier nicht eingezeichnet ist.
+
+Die Frequenz wird an einem Potentiometer am Frequenzgenerator eingestellt. Dieses Signal wird dann über den Verstärker
+an den Elektromagneten angelegt welcher die Saite zum Schwingen bringt.
+
+Da die Skala auf dem Frequenzgenerator zu ungenau ist messen wir die Frequenz parallel am Ausgang des Verstärkers mit
+dem Multimeter. Dies sind dann auch die gemessenen Frequenzen in den Messreihen.
 
 \section{Theorie}\label{sec:theorie}
 % - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
+Die Eigenfrequenzen der Saite lassen sich mit folgenden Formeln berechnen:
 
-\section{Fehlerrechnung}
+\begin{itemize}
+ \item $f_n$ : Eigenfrequenzen
+ \item $n$ : Anzahl Knoten
+ \item $l$ : Länge der Saite
+ \item $K$ : Zugkraft
+ \item $\mu$ : Masse pro Länge
+ \item $v$ : Ausbreitungsgeschwindigkeit
+\end{itemize}
+
+\[f_n = \frac{n}{2l}\sqrt{\frac{K}{\mu}}\]
+
+Um $\mu$ zu Berechnen stellen wir die Formel entsprechend um und erhalten:
+
+\[\mu = \frac{n^2 K}{f^2 4l^2}\]
+
+Die Ausbreitungsgeschwindigkeit entspricht dem Wurzelterm in der ersten Gleichung:
+
+\[v = \sqrt{\frac{K}{\mu}}\]
+
+Abschätzung der Energie der Saite mit $m=\mu l$ und $v_{max}=\sqrt{\frac{K}{\mu}}$:
+
+\[E\leq \frac{1}{2}mv_{max}^2 = \frac{1}{2}\mu l\frac{K}{\mu} = \frac{1}{2}lK\]
+
+linke Seite mit $E_{kin}=\frac{1}{2}m\dot x^2$, $E_{pot}=\frac{k}{2}x^2$, $m\omega^2=k$
+und dem Ansatz:
+\[x(t)=Asin(\omega t) \Rightarrow \dot x(t)=A\omega cos(\omega t)\]
+\[E=E_{kin}+E_{pot}=\frac{k}{2}A^2cos^2(\omega t) + \frac{k}{2}A^2sin^2(\omega t)= \frac{k}{2}A^2 = \frac{\omega^2 \mu A^2 l}{2}\]
+\[E=\overline{E_{kin}}+\overline{E_{pot}}=\frac{1}{T}\int_0^T E_{kin}dt + \frac{1}{T}\int_0^T E_{pot}dt=\frac{k}{4}A^2 = \frac{\omega^2 \mu A^2 l}{4}\]
 
 \section{Praktische Aufgaben}
 % - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
 
-\section{Messung}
+\subsection{Messung}
+Die Messungen wurden mit zwei unterschiedlichen Zugkräften (K) durchgeführt welche mittels der Spannvorrichtung
+eingestellt wurde. Die Kraft wurde mittels der Federwaage ermittelt.
+
+Mit dem Frequenzgenerator wurde nun die Frequenz langsam hochgefahren bis die Saite zum schwingen anfing. Danach haben wir
+die Frequenz weiter erhöht bis zur zweiten Schwingung usw. Der Elektromagnet musste dabei jedes mal neu bei einem Schwingungsbauch 
+positioniert werden, also in der Mitte zwischen zwei Knoten. Die Länge der Saite l[m] habe wir zu beginn auf 1m eingestellt.
+
+Die Frequenz wurde mittels dem Multimeter gemessen. Daraus wurde dann die Masse pro Länge $\mu$ berechnet
+nach der Formel in Abschnitt \ref{sec:theorie}.
 
 \begin{itemize}
- \item K [N] : Zugkraft
- \item f [Hz] : Frequenz
- \item n [-] : Anzahl Knoten
+ \item K : Zugkraft
+ \item f : Frequenz
+ \item n : Anzahl Knoten
+ \item $\mu$ : Masse pro Länge
 \end{itemize}
 
-
 \begin{center}
-\pgfplotstabletypeset[
-  col sep=comma,
-  every head row/.style={before row=\hline,after row=\hline\hline},
-  every last row/.style={after row=\hline},
-  every first column/.style={
-    column type/.add={|}{}
-  },
-  every last column/.style={
-    column type/.add={}{|}
-  }
-]{versuch_05_saite_messung_01.csv}
+\begin{tabular}{|c|c|c|c|}
+\hline
+K [N]& n[-] & f[Hz] & $\mu[\frac{kg}{m^2}*10^{-4}]$ \\
+\hline
+9.81 & 1 & 55.5 & 7.96 \\
+\hline
+9.81 & 2 & 106 & 8.73 \\
+\hline
+9.81 & 3 & 156.5 & 9.00 \\
+\hline
+9.81 & 4 & 210 & 8.90 \\
+\hline
+9.81 & 5 & 256 & 9.35 \\
+\hline
+9.81 & 6 & 313.9 & 8.96 \\
+\hline
+9.81 & 7 & 361 & 9.22 \\
+\hline
+9.81 & 8 & 417 & 9.02 \\
+\hline
+9.81 & 9 & 468 & 9.07 \\
+\hline
+9.81 & 10 & 531.5 & 8.68 \\
+\hline
+19.61 & 1 & 75.5 & 8.60 \\
+\hline
+19.61 & 2 & 149.5 & 8.78 \\
+\hline
+19.61 & 3 & 221.3 & 9.01 \\
+\hline
+19.61 & 4 & 293.1 & 9.13 \\
+\hline
+19.61 & 5 & 367.7 & 9.07 \\
+\hline
+19.61 & 6 & 439.5 & 9.14 \\
+\hline
+19.61 & 7 & 511.8 & 9.17 \\
+\hline
+19.61 & 8 & 587.8 & 9.08 \\
+\hline
+19.61 & 9 & 652.6 & 9.33 \\
+\hline
+19.61 & 10 & 728.4 & 9.24 \\
+\hline
+\end{tabular}
 \end{center}
 
+\subsection{Auswertung}
+
+\subsubsection{Masse pro Länge $\mu$}
+Der Mittelwert von $\mu$ und dessen Standardabweichung lässt sich nun aus den Messwerten berechnen.
+
+\[\overline{\mu}=8.97*10^{-4} \frac{kg}{m^2}\]
+\[s_{\mu}=0.307*10^{-4} \frac{kg}{m^2}\]
+
+\subsubsection{Ausbreitungsgeschwindigkeit $v$}
+Die Ausbreitungsgeschwindigkeit $v$ lässt sich nun ebenfalls für beide K berechnen:
+
+\[K_1=9.81N : v_1=33.39\frac{m}{s}\]
+\[K_2=19.61N : v_2=47.21\frac{m}{s}\]
+
+Die Standardabweichung von $v_i$:
+
+\[s_v=\sqrt{(\frac{\partial v}{\partial K})^{2}s_{K}^{2}+(\frac{\partial v}{\partial \mu})^{2}s_{\mu}^{2}}\]
+
+mit $(\frac{\partial v}{\partial K})^{2}=\frac{1}{4K\mu}$ und $(\frac{\partial v}{\partial \mu})^{2}=\frac{K}{4\mu^3}$.
+Für die Standardabweichung von K können wir eine Schätzung auf Grund der Federwaage machen. Da die Skala sehr ungenau war
+schätzen wir eine Abweichung von ungefähr $s_K=0.5N$.
+
+\[s_{v_1}=3.21\frac{m}{s}\]
+\[s_{v_2}=3.15\frac{m}{s}\]
+
+Resultat:
+\[\underline{\underline{v_1=33.39\pm3.21\frac{m}{s}}}\]
+\[\underline{\underline{v_2=47.21\pm3.15\frac{m}{s}}}\]
+
+\subsubsection{Energie}
+Die Energie lässt sich für beide K abschätzen mit:
+
+\[E\leq \frac{1}{2}lK\]
+\[E_{K_1}\leq 4.91J\]
+\[E_{K_2}\leq 9.81J\]
+
+\subsubsection{Vergleich mit der Theorie}
+Wir berechnen nun die Frequenzen nach der Formel in Abschnitt \ref{sec:theorie} und
+stellen diese mit den Messwerten in einer Tabelle zusammen. Um die Fehlerbalken
+angeben zu können muss noch die Standardabweichung für die Frequenz berechnet werden:
+
+\[s_f=\sqrt{(\frac{\partial f}{\partial K})^{2}s_{K}^{2}+(\frac{\partial f}{\partial \mu})^{2}s_{\mu}^{2}}\]
+mit $(\frac{\partial v}{\partial K})^{2}=\frac{n^2}{16l^2K\mu}$ und $(\frac{\partial v}{\partial \mu})^{2}=\frac{n^2K}{16l^2\mu^3}$.
+
+\begin{center}
+ \includegraphics[scale=0.4]{./versuch_05_saite_graph2.jpeg}
+ % versuch_05_saite_graph.jpeg: 1625x981 pixel, 84dpi, 49.14x29.66 cm, bb=0 0 1393 841
+\end{center}
+
+Die mittlere quadratische Abweichung liegt bei $15,08Hz$ für $K_1$ und bei $35,87Hz$ für $K_2$ 
 
 \section{Diskussion}
 % - Kommentare
@@ -64,6 +218,15 @@
 % - Hinweis auf möglich Fehlerquellen (besonders systematische Fehler)
 % - Schwierigkeiten bei der Messung
 % ...
+Wir hatten vor allem beim messen der höheren Frequenzen grosse Schwierigkeiten überhaupt eine Schwingung zu
+erkennen. Dies ging meistens nur noch über das Gehör. Um so überraschender ist es das die höheren Frequenzen
+besser mit den berechneten Werten übereinstimmen.
+
+Eine weitere Schwierigkeit war die Positionierung des Elektromagneten. Es wäre praktisch wenn die exakten Positionen
+schon vor der Messung bekannt wären. Dies könnte zum Beispiel in einer Übungsaufgabe in der Vorbereitung geschehen.
+ 
+Im allgemeinen stimmen die Resultate der Messungen gut mit den berechneten Werten überein. Ausser wie schon erwähnt
+bei den tiefen Frequenzen.
 
 \begin{thebibliography}{99}
 
