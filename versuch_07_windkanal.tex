@@ -12,27 +12,144 @@
 
 \begin{document}
 
-\title{Windkanal}
+\title{Tragflächenmodell im Windkanal}
 \author{Andreas Zuber, Florian Schnider}
 
 \maketitle
 
 \section{Einleitung}
-
-\subsection{Ziel des Versuches}
+Anhand eines Tragflächenmodells sollen die Grundlagen der Fluiddynamik untersucht werden.
 
 \subsection{Versuchsaufbau}\label{sec:versuchsaufbau}
 % - Skizze
 % - Gerätenummern
 % ...
+\begin{center}
+ \includegraphics[scale=0.4]{./versuch_07_windkanal_aufbau.jpeg}
+ % versuch_07_windkanal_aufbau.jpeg: 1016x688 pixel, 84dpi, 30.72x20.80 cm, bb=0 0 871 590
+\end{center}
+
+\subsection{Material}
+\begin{enumerate}
+\item Windmaschine/Turbine (EP A 05-1739)
+\item Tragflächenmodell
+\item Manometer (EP A 05 1076)
+\item Drucksonde
+\item Flügelprofilsehne
+\item Set mit Gewichten 
+\end{enumerate}
 
 \section{Theorie}\label{theorie}
 % - Zusammenfassung und Zusammenstellung der für die Auswertungbenötigten Formeln
-
-\subsection{Fehlerrechnung}
+Gewicht- und Antriebskraft Berechnung für Aufgabe 1:
+\[F_a=\Delta m_1 g\]
+\[F_\omega=\Delta m_2 g\]
 
 \section{Praktische Aufgaben}
 % - Alle Messwerte in Übersichtlichen Tabellen mit Mittelwerten und Fehlerangaben
+\subsection{Aufgabe 1}
+Die erste Aufgabe war für eine bestimmte Strämungsgeschwindwigkeit ein Polardiagramm
+der Kräfte zu erstellen. Dazu waren zwei Messungen notwendig.
+
+Zuerst mussten wir die Gewichtskraft des Tragflächenmodells aufheben. Auf der Seite mit
+der Schale für die Gewichte befindet sich ein zusätzliches verstellbares Gewicht welches wir
+so einstellen mussten das wir zusätzliche Gewichte aus dem Geichtsset auf die Schale legen konnten.
+Dies ermöglicht es wärend der Messung Gewichte zu entfernen und aus der Differenz die Auftriebskraft
+abzulesen.
+
+\begin{itemize}
+ \item Strömungseinstellung an Turbine: 9
+ \item Gewichte in Schale in balance: 80g
+\end{itemize}
+
+Das Tragflächenmodell ist so ausgelegt das mit den Gewichten direkt die Kraft auf die
+Tragfläche gemessen werden kann. Die Kräfte an der Tragfläche erzeugen ein Drehmoment welches wir
+mit den Gewichten kompensieren.
+
+Für die Anstellwinkel $\phi$ haben wir 0\textdegree in der Ausgangslage. Negative Winkel sind Drehungen im
+Uhrzeigersinn, positive im Gegenuhrzeigersinn.
+
+Bei der Messung von $F_a$ wird die Auftriebskraft der Tragfläche gemessen. Dazu wird die Tragfläche
+horizontal angeblasen.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\phi$ [\textdegree]& $m_2$ [kg]& $\Delta m_1$ [kg] & $\left| F_a\right|$ [N] \\
+\hline
+-20 &0.005 &-0.075 &0.736 \\
+\hline
+-15 &0.015 & -0.065 &0.638 \\
+\hline
+-10 &0.025 & -0.055 & 0.54\\
+\hline
+-5 & 0.04& -0.04 & 0.392\\
+\hline
+0 &0.05 & -0.03 &0.294 \\
+\hline
+5 & 0.061& -0.019 & 0.186\\
+\hline
+10 &0.07 & -0.01 & 0.098\\
+\hline
+15 &0.082 & 0.002 &0.02 \\
+\hline
+20 &0.094 & 0.014 & 0.137\\
+\hline
+\end{tabular}
+\end{center}
+
+Für die Messung von $F_\omega$ mussten wir die Turbine auf den Boden stellen. Die
+Tragfläche wurde um 90\textdegree gedreht. So konnten wir direkt die Wiederstandskraft
+auf die Tragfläche messen.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$\phi$ [\textdegree]& $m_2$ [kg]& $\Delta m_2$ [kg] & $\left| F_\omega\right|$ [N] \\
+\hline
+20&0.047&-0.033&0.32373 \\
+\hline
+15&0.053&-0.027&0.26487 \\
+\hline
+10&0.057&-0.023&0.22563 \\
+\hline
+5&0.056&-0.024&0.23544 \\
+\hline
+0&0.062&-0.018&0.17658 \\
+\hline
+-5&0.063&-0.017&0.16677 \\
+\hline
+-10&0.062&-0.018&0.17658 \\
+\hline
+-15&0.063&-0.017&0.16677 \\
+\hline
+-20&0.062&-0.018&0.17658 \\
+\hline
+\end{tabular}
+\end{center}
+
+Die so gemessenen Kräfte haben wir in ein Diagramm eingezeichnet. Die Verbindungslinie ist
+lediglich dazu da den Verlauf der Kurfe besser zu erkennen. Für die Messung relevant sind
+lediglich die Punkte.
+
+\begin{center}
+ \includegraphics[scale=0.5]{./versuch_07_graph1.jpeg}
+ % versuch_07_graph1.jpeg: 784x509 pixel, 84dpi, 23.71x15.39 cm, bb=0 0 672 436
+\end{center}
+
+\subsection{Aufgabe 2}
+
+\subsubsection{Teilaufgabe 2a}
+Bei dieser Teilaufgabe wählen wir direkt ein Resultat aus der ersten Ausgabe aus welches wir
+weiter verwenden:
+
+\[\phi=-15\textdegree \Longrightarrow F_a=0.638N\]
+
+\subsubsection{Teilaufgabe 2b}
+Bei dieser Aufgabe haben wir Die Druckverteilung um das Profil herum gemessen. Die Tragfläche
+war bei dieser Messung fix in der in Teilaufgabe 2a gewählten Position.
+
+
 
 \section{Diskussion}
 % - Kommentare
